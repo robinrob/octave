@@ -21,6 +21,11 @@ function plotpoly(coefficients)
   set(gca, "linewidth", 1)
   set(gca, "fontsize", 18)
 
+  % axes("position",[0.3 0.2 0.3 0.3])
+  set(gca, "position",[0.02 0.05 0.96 0.85])
+
+  % figure('Position',[-300, -300, 300, 300]);
+
   % xlabel("x", "fontsize", 20)
   % ylabel("y", "fontsize", 20)
 
@@ -29,7 +34,7 @@ function plotpoly(coefficients)
 
   c_string = "";
   for index=1:1:length(coefficients)
-    c_string = sprintf("%s %.0f x^%d +", c_string, coefficients(index), length(coefficients) - index);
+    c_string = sprintf("%s %.0fx^%d +", c_string, coefficients(index), length(coefficients) - index);
   end
   c_string = c_string(1:length(c_string)-1);
 
